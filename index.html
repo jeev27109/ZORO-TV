@@ -1,51 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Wano Zoro - LG Remote Controls</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZORO-TV | Wano Edition</title>
 <style>
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050817;color:#fff;font-family:Arial,sans-serif}
-#scene{position:relative;width:100vw;height:100vh;display:grid;place-items:center}
-#art{width:100%;height:100%;object-fit:contain;transition:filter .2s}
-#eye{position:absolute;left:43.1%;top:38.2%;width:2.2vw;height:1.2vw;min-width:14px;min-height:8px;border-radius:50%;background:radial-gradient(ellipse,#e9ffff 0 22%,#40d7ff 28% 48%,#08202b 57% 70%,transparent 74%);box-shadow:0 0 12px #4deaff;transform:translate(-50%,-50%);transition:left .18s,top .18s;pointer-events:none;opacity:.9}
-#flash{position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(90,255,70,.7),transparent 65%);opacity:0;pointer-events:none}
-#flash.go{animation:slash .7s ease-out}@keyframes slash{0%{opacity:0;transform:translateX(-35%)}25%{opacity:1}100%{opacity:0;transform:translateX(35%)}}
-#panel{position:absolute;right:3%;bottom:5%;width:min(31vw,330px);min-width:210px;padding:12px;background:#06101ddd;border:2px solid #d9f4ff;border-radius:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-button{min-height:48px;border:2px solid #9bd9ee;border-radius:12px;background:#14283a;color:white;font-size:clamp(14px,1.5vw,20px);font-weight:bold}
-button:focus{outline:5px solid #ffe45c;outline-offset:2px;background:#087b9d;color:white}
-#up{grid-column:2}#left{grid-column:1;grid-row:2}#center{grid-column:2;grid-row:2;background:#25374a}#right{grid-column:3;grid-row:2}#down{grid-column:2;grid-row:3}#action{grid-column:1/4;min-height:56px;background:#63331f;border-color:#ffc78b}
-#status{position:absolute;left:2%;bottom:2%;padding:9px 12px;background:#000c;border:1px solid #ffffff77;border-radius:9px;font-size:clamp(12px,1.4vw,18px)}
-#hint{position:absolute;left:2%;top:2%;max-width:70%;padding:9px 12px;background:#000b;border-radius:8px;font-size:clamp(12px,1.3vw,18px)}
-body.action #art{filter:brightness(1.18) saturate(1.3)}
-@media(max-width:700px){#panel{width:42vw;min-width:180px;right:2%;bottom:8%;padding:7px;gap:5px}button{min-height:40px}}
-</style></head><body>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050607;color:#fff;font-family:Arial,Helvetica,sans-serif}#scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(ellipse at center,#20211f 0,#080909 72%)}#art{width:100%;height:100%;object-fit:contain;transform:scale(1);transition:transform .45s ease,filter .45s ease;animation:idle 7s ease-in-out infinite;will-change:transform}#art.missing{display:none}#fallback{display:none;text-align:center;padding:30px;color:#ddd}#fallback strong{color:#f2d36b}#petals{position:absolute;inset:0;pointer-events:none;overflow:hidden}.petal{position:absolute;top:-8vh;width:13px;height:9px;background:#f5a6b5;border-radius:80% 10% 80% 10%;opacity:.75;animation:fall linear infinite;transform:rotate(25deg)}@keyframes fall{to{transform:translate3d(100px,115vh,0) rotate(760deg)}}@keyframes idle{0%,100%{filter:brightness(1)}50%{filter:brightness(1.045)}}#slash{position:absolute;left:-20%;top:50%;width:140%;height:5px;opacity:0;transform:rotate(-24deg);background:linear-gradient(90deg,transparent,#baffc8,#fff,#76ff9c,transparent);filter:drop-shadow(0 0 12px #53ff8a)}#slash.go{animation:slash .62s ease-out} @keyframes slash{0%{opacity:0;transform:translateX(-35%) rotate(-24deg) scaleX(.2)}25%{opacity:1}100%{opacity:0;transform:translateX(55%) rotate(-24deg) scaleX(1.25)}}#flash{position:absolute;inset:0;background:#caffd7;opacity:0;pointer-events:none}#flash.go{animation:flash .28s ease-out}@keyframes flash{0%{opacity:0}25%{opacity:.22}100%{opacity:0}}#blink{position:absolute;inset:0;background:linear-gradient(#050607 0%,transparent 22%,transparent 78%,#050607 100%);opacity:0;pointer-events:none}#blink.go{animation:blink .22s ease-in-out}@keyframes blink{0%,100%{opacity:0}45%{opacity:.18}}#panel{position:absolute;left:50%;bottom:3.2%;transform:translateX(-50%);display:grid;grid-template-columns:repeat(3,minmax(90px,145px));gap:8px;padding:10px;background:rgba(0,0,0,.72);border:1px solid rgba(255,255,255,.24);border-radius:13px;z-index:5;backdrop-filter:blur(5px)}button{min-height:48px;padding:8px 10px;border:1px solid #777;border-radius:8px;background:rgba(25,29,29,.94);color:#fff;font-size:14px;font-weight:bold;letter-spacing:.3px;cursor:pointer}button:focus{outline:4px solid #ffe36a;outline-offset:2px;background:#343b35;color:#fff}button:active{background:#59634e}#status{position:absolute;top:2.5%;left:50%;transform:translateX(-50%);font-size:13px;letter-spacing:2px;color:#f2d36b;text-shadow:0 2px 5px #000;white-space:nowrap;z-index:4}#hint{position:absolute;right:15px;top:15px;font-size:11px;color:#ddd;opacity:.7;z-index:4}#sound{position:absolute;right:15px;bottom:15px;z-index:6;min-height:38px;font-size:12px}@media(max-width:700px){#panel{grid-template-columns:repeat(3, minmax(75px,1fr));width:94%;gap:5px;padding:7px}button{font-size:11px;min-height:42px;padding:6px 3px}#status{font-size:10px}}
+</style>
+</head>
+<body>
 <div id="scene">
-<img id="art" src="zoro-wano.jpg" alt="Wano Zoro">
-<div id="eye"></div><div id="flash"></div>
-<div id="hint">Use remote arrows to highlight a control, then press OK to activate it.</div>
-<div id="status">WANO ZORO · READY</div>
+  <img id="art" src="zoro-wano.jpg" alt="Wano Zoro wallpaper" onerror="this.className='missing';document.getElementById('fallback').style.display='block'">
+  <div id="fallback">Keep your original image named <strong>zoro-wano.jpg</strong><br>in the same GitHub folder as this index.html file.</div>
+  <div id="petals"></div><div id="slash"></div><div id="flash"></div><div id="blink"></div>
+</div>
+<div id="status">WANO ZORO · REMOTE CONTROL READY</div>
+<div id="hint">Use arrows + OK</div>
 <div id="panel" aria-label="Zoro controls">
-<button id="up" type="button">↑ LOOK UP</button>
-<button id="left" type="button">← LEFT</button>
-<button id="center" type="button">RESET</button>
-<button id="right" type="button">RIGHT →</button>
-<button id="down" type="button">↓ LOOK DOWN</button>
-<button id="action" type="button">⚔ SWORD ACTION</button>
-</div></div>
+  <button id="up">▲ LOOK UP</button><button id="reset">◎ RESET</button><button id="sword">⚔ SWORD SLASH</button>
+  <button id="left">◀ LOOK LEFT</button><button id="blinkBtn">◉ BLINK</button><button id="right">LOOK RIGHT ▶</button>
+  <button id="down">▼ LOOK DOWN</button><button id="move">↔ HEAD MOVE</button><button id="soundBtn">♪ SOUND: ON</button>
+</div>
 <script>
 (function(){
- const eye=document.getElementById('eye'),flash=document.getElementById('flash'),status=document.getElementById('status');
- let x=0,y=0;
- function render(){eye.style.left=(43.1+x*.55)+'%';eye.style.top=(38.2+y*.45)+'%';status.textContent='ZORO · GAZE UPDATED'}
- function move(dx,dy){x=Math.max(-12,Math.min(12,x+dx));y=Math.max(-7,Math.min(7,y+dy));render()}
- function reset(){x=0;y=0;render();status.textContent='GAZE RESET'}
- function slash(){document.body.classList.add('action');flash.classList.remove('go');void flash.offsetWidth;flash.classList.add('go');status.textContent='THREE SWORD STYLE!';setTimeout(()=>{document.body.classList.remove('action');status.textContent='WANO ZORO · READY'},850)}
- document.getElementById('up').addEventListener('click',()=>move(0,-3));
- document.getElementById('down').addEventListener('click',()=>move(0,3));
- document.getElementById('left').addEventListener('click',()=>move(-4,0));
- document.getElementById('right').addEventListener('click',()=>move(4,0));
- document.getElementById('center').addEventListener('click',reset);
- document.getElementById('action').addEventListener('click',slash);
- document.getElementById('up').focus();render();
+ var art=document.getElementById('art'), status=document.getElementById('status'), slash=document.getElementById('slash'), flash=document.getElementById('flash'), blink=document.getElementById('blink');
+ var x=0,y=0,head=0,soundOn=true,audio=null;
+ function say(t){status.innerHTML=t;}
+ function update(){art.style.transform='translate('+x+'px,'+y+'px) rotate('+head+'deg) scale(1.012)';}
+ function tone(freq,duration,type,volume){if(!soundOn)return;try{var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;if(!audio)audio=new AC();if(audio.state==='suspended')audio.resume();var o=audio.createOscillator(),g=audio.createGain();o.type=type||'sawtooth';o.frequency.setValueAtTime(freq,audio.currentTime);o.frequency.exponentialRampToValueAtTime(Math.max(50,freq*.38),audio.currentTime+duration);g.gain.setValueAtTime(volume||.035,audio.currentTime);g.gain.exponentialRampToValueAtTime(.001,audio.currentTime+duration);o.connect(g);g.connect(audio.destination);o.start();o.stop(audio.currentTime+duration);}catch(e){}}
+ function look(dx,dy){x=Math.max(-18,Math.min(18,x+dx*6));y=Math.max(-12,Math.min(12,y+dy*4));head=Math.max(-1.8,Math.min(1.8,head+dx*.35));update();say('GAZE: '+(dx<0?'LEFT':dx>0?'RIGHT':dy<0?'UP':dy>0?'DOWN':'CENTER'));}
+ function reset(){x=0;y=0;head=0;update();say('WANO ZORO · CENTERED');}
+ function blinkNow(){blink.className='go';setTimeout(function(){blink.className='';},260);say('BLINK');}
+ function sword(){slash.className='go';flash.className='go';tone(520,.36,'sawtooth',.05);setTimeout(function(){slash.className='';flash.className='';},700);say('THREE-SWORD SLASH!');}
+ function moveHead(){head=head===0?1.8:head===1.8?-1.8:0;update();tone(180,.12,'triangle',.018);say('HEAD MOVEMENT');}
+ function toggleSound(){soundOn=!soundOn;document.getElementById('soundBtn').innerHTML='♪ SOUND: '+(soundOn?'ON':'OFF');say('SOUND '+(soundOn?'ON':'OFF'));if(soundOn)tone(440,.12,'sine',.02);}
+ document.getElementById('up').onclick=function(){look(0,-1)};document.getElementById('down').onclick=function(){look(0,1)};document.getElementById('left').onclick=function(){look(-1,0)};document.getElementById('right').onclick=function(){look(1,0)};document.getElementById('reset').onclick=reset;document.getElementById('blinkBtn').onclick=blinkNow;document.getElementById('sword').onclick=sword;document.getElementById('move').onclick=moveHead;document.getElementById('soundBtn').onclick=toggleSound;
+ document.addEventListener('keydown',function(e){var k=e.key||e.keyCode;if(k==='ArrowUp'||k===38){look(0,-1);e.preventDefault()}else if(k==='ArrowDown'||k===40){look(0,1);e.preventDefault()}else if(k==='ArrowLeft'||k===37){look(-1,0);e.preventDefault()}else if(k==='ArrowRight'||k===39){look(1,0);e.preventDefault()}else if(k==='Enter'||k===13){var el=document.activeElement;if(el&&el.tagName==='BUTTON'){el.click();e.preventDefault()}}else if(k==='Escape'||k===27){reset()}});
+ var petalBox=document.getElementById('petals');for(var i=0;i<18;i++){var p=document.createElement('i');p.className='petal';p.style.left=(Math.random()*100)+'%';p.style.animationDuration=(9+Math.random()*12)+'s';p.style.animationDelay=(-Math.random()*18)+'s';p.style.opacity=(.25+Math.random()*.55);p.style.transform='scale('+(0.5+Math.random()*.9)+')';petalBox.appendChild(p)}
+ // Subtle idle blink and ambience; no audio plays until the viewer presses a control.
+ setInterval(function(){if(Math.random()>.62)blinkNow();},8500);
+ update();
 })();
-</script></body></html>
+</script>
+</body>
+</html>
